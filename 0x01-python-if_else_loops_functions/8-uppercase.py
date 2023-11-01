@@ -7,3 +7,4 @@ def uppercase(c):
         else:
             change = 0
         print("{:c}".format(lettre_to_number - change), end="")
+    print()
