@@ -5,4 +5,4 @@ def new_in_list(my_list, idx, element):
     if idx > length or idx < 0:
         return None
     else:
-        copy_list[idx] = element
+        return copy_list[idx] = element
