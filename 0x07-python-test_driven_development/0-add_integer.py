@@ -10,7 +10,7 @@ def add_integer(a, b=98):
 
     Args:
         a: the fierst argument (int, flaot)
-        b: the second argument (int, float)
+        b: the second argument (int, float),default value is 98
 
     Raises:
         TypeError : if a, b are not int or float
