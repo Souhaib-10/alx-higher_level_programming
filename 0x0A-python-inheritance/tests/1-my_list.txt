@@ -124,3 +124,22 @@ The order of the original list is not altered after a call to the method.
 
     >>> print(my_list)
     [1, 4, 2, 3, 5]
+
+sorted list of words
+
+::
+
+    >>> my_list = MyList()
+    >>> my_list.append("zine")
+    >>> my_list.append("pipo")
+    >>> my_list.append("amine")
+    >>> my_list.append("borto")
+    >>> my_list.append("kaka")
+    >>> print(my_list)
+    ['zine', 'pipo', 'amine', 'borto', 'kaka']
+
+::
+
+    >>> my_list.print_sorted()
+    ['amine', 'borto', 'kaka', 'pipo', 'zine']
+
