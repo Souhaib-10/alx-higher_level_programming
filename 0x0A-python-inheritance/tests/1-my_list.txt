@@ -143,3 +143,12 @@ sorted list of words
     >>> my_list.print_sorted()
     ['amine', 'borto', 'kaka', 'pipo', 'zine']
 
+if want to have sorted a list have different types
+
+::
+
+    >>> my_list = MyList(["zide", 10, "kolo", 5])
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+	...
+    TypeError: '<' not supported between instances of 'int' and 'str'
