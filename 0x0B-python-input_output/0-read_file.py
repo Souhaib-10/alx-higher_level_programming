@@ -5,10 +5,9 @@
     filename (str): name of file
 '''
 
-
 def read_file(filename=""):
-    '''read file'''
+    """function that reads a text file and prints it"""
 
-    with open(filename, "r", encoding="UFT-8") as f:
-        test = f.read()
+    with open(filename) as f:
+        text = f.read()
         print(text, end="")
