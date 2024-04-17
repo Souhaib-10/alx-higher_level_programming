@@ -22,7 +22,7 @@ class Square(Rectangle):
 
     def __str__(self):
         ''' return resultat tp print
-        Return 
+        Return:
             Return size/size
         '''
 
