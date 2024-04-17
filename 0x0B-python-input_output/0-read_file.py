@@ -8,6 +8,6 @@
 
 def read_file(filename=""):
     '''read file'''
-    open(filename) as f:
+    with open(filename) as f:
         test = f.read()
         print(text, end="")
