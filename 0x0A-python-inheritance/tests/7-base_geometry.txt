@@ -103,3 +103,10 @@ Methods
 	>>> bg.integer_validator({"test": 21}, (1, 2))
 	Traceback (most recent call last):
 	TypeError: {'test': 21} must be an integer
+
+::
+
+	>>> bg.integer_validator(None)  # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
