@@ -66,3 +66,27 @@ Methods
 	>>> bg.integer_validator("distance", -4)
 	Traceback (most recent call last):
 	ValueError: distance must be greater than 0
+
+::
+
+	>>> bg.integer_validator("tuple", (1,))
+        Traceback (most recent call last):
+        TypeError: tuple must be an integer
+
+::
+
+        >>> bg.integer_validator("table", [3])
+        Traceback (most recent call last):
+        TypeError: table must be an integer
+
+::
+
+        >>> bg.integer_validator("object", {3, 4})
+        Traceback (most recent call last):
+        TypeError: object must be an integer
+
+::
+
+        >>> bg.integer_validator("args none", None)
+        Traceback (most recent call last):
+        TypeError: args none must be an integer
