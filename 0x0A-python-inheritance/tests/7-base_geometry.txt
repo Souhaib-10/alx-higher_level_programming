@@ -97,3 +97,9 @@ Methods
 	Traceback (most recent call last):
     		...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+	>>> bg.integer_validator({"test": 21}, (1, 2))
+	Traceback (most recent call last):
+	TypeError: {'test': 21} must be an integer
