@@ -4,15 +4,13 @@
 
 class BaseGeometry:
     ''' define class BaseGeometry'''
+
     def area(self):
         '''
             Calculate the area of the geometric shape.
 
             Raises:
                 Exception: If the area calculation method is not implemented.
-
-            Returns:
-                str: A message Exception
         '''
         raise Exception("area() is not implemented")
 
@@ -20,15 +18,11 @@ class BaseGeometry:
         ''' method to validate value is integer or not
 
         Args:
-            name(str): always a string
-            value(int): value to check is integer and bigger than 0
-
+            name (str): always a string
+            value (int): value to check is integer and bigger than 0
         Raises:
             TypeError: if value is not integer
             ValueError: if value is less or equal 0
-
-        Returns:
-            None
         '''
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
