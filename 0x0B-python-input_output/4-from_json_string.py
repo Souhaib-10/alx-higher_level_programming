@@ -13,4 +13,4 @@ def from_json_string(my_str):
         return obj data
     '''
 
-    return json.loads(my_obj)
+    return json.loads(my_str)
