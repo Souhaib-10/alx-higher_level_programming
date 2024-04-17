@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 ''' define class Rectangle inherits from BaseGeometry'''
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -8,11 +9,9 @@ class Rectangle(BaseGeometry):
     Args:
         width(int):value width of rectangle
         height(int):value hight of rectangle
-    
     '''
-    def __init__(self,width,height):
+    def __init__(self, width, height):
         self.integer_validator("width", width)
         self__width = width
         self.integer_validator("height", height)
         self.__height = height
-    
