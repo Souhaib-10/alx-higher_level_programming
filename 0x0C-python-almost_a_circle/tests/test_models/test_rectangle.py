@@ -9,6 +9,22 @@ import contextlib
 
 class TestRectangle(unittest.TestCase):
     ''' define cases for testing class'''
+    def test_str(self):
+        ''' test print function '''
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        r2 = Rectangle(5, 5, 1)
+        expected_output1 = "[Rectangle] (12) 2/1 - 4/6\n"
+        expected_output2 = "[Rectangle] (10) 1/0 - 5/5\n"
+
+        with io.StringIO() as buf1, io.StringIO() as buf2:
+            with contextlib.redirect_stdout(buf1):
+                print(r1)
+            with contextlib.redirect_stdout(buf2):
+                print(r2)
+
+            self.assertEqual(buf1.getvalue(), expected_output1)
+            self.assertEqual(buf2.getvalue(), expected_output2)
+
     def test_display(self):
         '''Test display method '''
         r1 = Rectangle(2, 2)
