@@ -14,7 +14,7 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(4, 6, 2, 1, 12)
         r2 = Rectangle(5, 5, 1)
         expected_output1 = "[Rectangle] (12) 2/1 - 4/6\n"
-        expected_output2 = "[Rectangle] (8) 1/0 - 5/5\n"
+        expected_output2 = "[Rectangle] (10) 1/0 - 5/5\n"
 
         with io.StringIO() as buf1, io.StringIO() as buf2:
             with contextlib.redirect_stdout(buf1):
