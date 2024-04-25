@@ -32,8 +32,8 @@ class Rectangle(Base):
         Args:
             *args(ints):Many attribute values writed
         '''
-        attrs = ['id','width','height','x','y']
-        for i in range *args:
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i in range len(args):
             setattr(self, attrs[i], args[i])
 
     @property
