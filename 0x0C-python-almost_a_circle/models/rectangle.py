@@ -4,28 +4,20 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    ''' script class Rectangle '''
-
     def __init__(self, width, height, x=0, y=0, id=None):
         '''constructor of class Rectangle
         Args:
-            width (int):  the initial width of rectangle.
-            height (int): the initial height of rectangle.
-            x (int):      the x-coordinate
-            y (int):      the y-coordinate
-            id (int) :     unique identifier for this object
-        Raises:
-            TypeError: If either of width or height is not an int.
-            ValueError: If either of width or height <= 0.
-            TypeError: If either of x or y is not an int.
-            ValueError: If either of x or y < 0.
+        width (int):  the initial width of rectangle.
+        height (int): the initial height of rectangle.
+        x (int):      the x-coordinate
+        y (int):      the y-coordinate
+        id : str :     unique identifier for this object
         '''
-
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -35,7 +27,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         ''' Setter for width '''
-        self.validate_int("width", value, False)
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError('width must be > 0')
         self.__width = value
 
     @property
@@ -46,7 +41,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         ''' Setter for height '''
-        self.validate_int("height", value, False)
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError('height must be > 0')
         self.__height = value
 
     @property
@@ -57,7 +55,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         ''' Setter for x '''
-        self.validate_int("x", value)
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError('x must be >= 0')
         self.__x = value
 
     @property
@@ -68,7 +69,10 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         ''' Setter for x '''
-        self.validate_int("y", value)
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError('y must be >= 0')
         self.__y = value
 
     def validate_int(self, name, value, equal=True):
