@@ -105,4 +105,6 @@ class Rectangle(Base):
 
     def __str__(self):
         ''' Return rectangle message '''
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.height)
+        text = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
+        text += "- {}/{}".format(self.__width, self.height)
+        return text
