@@ -26,7 +26,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        
+
     def update(self, *args):
         ''' update Attributes.
         Args:
