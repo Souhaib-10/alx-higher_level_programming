@@ -40,6 +40,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(buf2.getvalue(), expected_output2)
 
     def test_constuctor(self):
+        ''' test constructor to create object '''
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
@@ -48,6 +49,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 12)
 
     def test_raises_exception(self):
+        ''' test raises for errors '''
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
             r = Rectangle(10, 2)
@@ -63,6 +65,7 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, 2, 3, -1)
 
     def test_getters(self):
+        ''' test getters function '''
         r = Rectangle(10, 2, 1, 3)
         self.assertEqual(r.width, 10)
         self.assertEqual(r.height, 2)
@@ -70,6 +73,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, 3)
 
     def test_area(self):
+        ''' test area of rectangel'''
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
         r2 = Rectangle(2, 10)
