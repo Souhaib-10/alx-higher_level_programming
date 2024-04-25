@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     ''' script class Rectangle '''
+
     def __init__(self, width, height, x=0, y=0, id=None):
         '''constructor of class Rectangle
         Args:
@@ -104,11 +105,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        ''' print the character # width instance data'''
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
-            print("")
+        ''' print the rectangle with the character #, taking care of x and y'''
+        for i in range(self.__y):
+            print()
+        for j in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         ''' Return rectangle message '''
