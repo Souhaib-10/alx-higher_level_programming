@@ -27,15 +27,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def update(self, *args):
-        ''' update Attributes.
-        Args:
-            *args(ints):Many attribute values writed
-        '''
-        attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range len(args):
-            setattr(self, attrs[i], args[i])
-
     @property
     def width(self):
         """Set/get the width of the Rectangle."""
