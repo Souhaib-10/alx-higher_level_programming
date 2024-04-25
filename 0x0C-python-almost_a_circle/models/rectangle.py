@@ -107,5 +107,5 @@ class Rectangle(Base):
             *args(ints):Many attribute values writed
         '''
         attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range len(args):
+        for i in range (len(args)):
             setattr(self, attrs[i], args[i])
