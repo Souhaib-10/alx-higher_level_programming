@@ -100,3 +100,12 @@ class Rectangle(Base):
         text = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
         text += "- {}/{}".format(self.__width, self.height)
         return text
+
+    def update(self, *args):
+        ''' update Attributes.
+        Args:
+            *args(ints):Many attribute values writed
+        '''
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i in range len(args):
+            setattr(self, attrs[i], args[i])
