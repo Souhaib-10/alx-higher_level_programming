@@ -8,17 +8,23 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         '''constructor of class Rectangle
         Args:
-        width (int):  the initial width of rectangle.
-        height (int): the initial height of rectangle.
-        x (int):      the x-coordinate
-        y (int):      the y-coordinate
-        id : str :     unique identifier for this object
+            width (int):  the initial width of rectangle.
+            height (int): the initial height of rectangle.
+            x (int):      the x-coordinate
+            y (int):      the y-coordinate
+            id (int) :     unique identifier for this object
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         '''
-        super().__init__(id)
+
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
+        super().__init__(id)
 
         if(not isinstance(self.__width, int)):
             raise(TypeError("width must be an integer."))
