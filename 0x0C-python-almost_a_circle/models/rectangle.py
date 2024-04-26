@@ -114,3 +114,13 @@ class Rectangle(Base):
         else:
             for i, j in kwargs.items():
                 setattr(self, i, j)
+
+    def to_dictionary(self):
+        ''' Return the dictionary of attr with it's numbers'''
+        return {
+                "x": self.__x,
+                "y": self.__y,
+                "id": self.id,
+                "height": self.__height,
+                "width": self.__width
+                }
