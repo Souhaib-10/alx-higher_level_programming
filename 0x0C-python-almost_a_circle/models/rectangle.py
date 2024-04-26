@@ -101,11 +101,16 @@ class Rectangle(Base):
         text += "- {}/{}".format(self.__width, self.height)
         return text
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' update Attributes.
         Args:
             *args(ints):Many attribute values writed
+            **kwargs(dict): Key/Value  update attribute
         '''
         attrs = ['id', 'width', 'height', 'x', 'y']
-        for i in range (len(args)):
-            setattr(self, attrs[i], args[i])
+        if args:
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for i, j in kwargs.items():
+                setattr(self, i, j)
