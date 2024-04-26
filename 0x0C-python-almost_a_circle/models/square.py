@@ -30,3 +30,17 @@ class Square(Rectangle):
         text = "[Square] ({}) {}/{} ".format(self.id, self.x, self.y)
         text += "- {}".format(self.width)
         return text
+
+    def update(self, *args, **kwargs):
+        ''' update Attributes.
+        Args:
+            *args(ints):Many attribute values writed
+            **kwargs(dict): Key/Value  update attribute
+        '''
+        attrs = ['id', 'size', 'x', 'y']
+        if args:
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for i, j in kwargs.items():
+                setattr(self, i, j)
