@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 ''' script to create class Square'''
 from models.rectangle import Rectangle
 
