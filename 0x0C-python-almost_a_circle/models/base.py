@@ -29,3 +29,17 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Write convert json of a list to a file
+        Args:
+        list_objs (list): A list object inhertied
+        """
+        f_name = cls.__name__+".json"
+        with open(f_name, "w") as jf:
+            if list_objs is None:
+                js.write('[]')
+            else:
+                list_dicts = [i.to_dictionary() for i in list_objs]
+                js.write(Base.to_json_string(list_dicts))
