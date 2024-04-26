@@ -98,7 +98,7 @@ class Rectangle(Base):
             [Rectangle] (<id>) <x>/<y> - <width>/<height>
         '''
         text = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
-        text += "- {}/{}".format(self.__width, self.height)
+        text += "- {}/{}".format(self.__width, self.__height)
         return text
 
     def update(self, *args, **kwargs):
