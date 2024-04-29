@@ -16,7 +16,7 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-        Rectangle. number_of_instance += 1
+        type(self). number_of_instance += 1
         self.width = width
         self.height = height
 
