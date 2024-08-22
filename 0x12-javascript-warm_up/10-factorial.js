@@ -1,14 +1,12 @@
 #!/usr/bin/node
-function factoriel (arg) {
-  let result = 1;
-  if (isNaN(arg)) {
-    console.log(1);
+function factorial (n) {
+  if (isNaN(n) || n === 0) {
+    return 1; // Factorial of 0 or NaN is 1
   } else {
-    for (let i = arg; i > 0; i--) {
-      result *= i;
-    }
-    console.log(result);
+    return n * factorial(n - 1); // Recursive call
   }
 }
-const argp = parseInt(process.argv[2]);
-factoriel(argp);
+
+const num = parseInt(process.argv[2]);
+const result = factorial(num);
+console.log(result);
