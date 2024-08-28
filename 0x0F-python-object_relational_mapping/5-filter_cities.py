@@ -14,8 +14,8 @@ if __name__ == "__main__":
                     FROM cities as c, states as s \
                     WHERE c.state_id =  s.id \
                     and s.name = %s \
-                    ORDER BY c.id",(sys.argv[4],))
+                    ORDER BY c.id", (sys.argv[4],))
     rows = cur.fetchall()
-    print(", ".join(row[0] for row in rows ))
+    print(", ".join(row[0] for row in rows))
     cur.close()
     db.close()
