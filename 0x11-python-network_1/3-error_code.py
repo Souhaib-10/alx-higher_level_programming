@@ -11,6 +11,6 @@ if __name__ == "__main__":
     req = Request(sys.argv[1])
     try:
         with urlopen(req) as reponse:
-            print(reponse.read().decode("utf-8"))
+            print(reponse.read().decode("ascii"))
     except HTTPError as e:
         print('Error code: ', e.code)
