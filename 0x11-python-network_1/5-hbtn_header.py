@@ -2,11 +2,9 @@
 ''' A python script that take a URL and display X-Request-Id value'''
 
 import sys
-from urllib.request import Request, urlopen
+import requests
 
-
-url = sys.argv[1]
-req = Request(url)
-with urlopen(req) as response:
-    res_format = response.read().decode('utf-8')
-    print(response.headers.get('X-Request-Id'))
+if __name__ == "__main__":
+    url = sys.argv[1]
+    req = requests.get(url)
+    print(req.headers['X-Request-Id'])

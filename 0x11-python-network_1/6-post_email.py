@@ -4,13 +4,8 @@
 '''
 
 import sys
-from urllib.request import Request, urlopen
-import urllib.parse
-
-url = sys.argv[1]
-value = {'email' : sys.argv[2]}
-data = urllib.parse.urlencode(value)
-data = data.encode('ascii')
-req = Request(url, data)
-with urlopen(req) as res:
-    print(res.read().decode('utf-8'))
+import requests
+if __name__ == "__main__":
+    url = sys.argv[1]
+    req = requests.post(url, data={'email': sys.argv[2]})
+    print(req.text)

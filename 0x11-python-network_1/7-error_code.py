@@ -5,14 +5,12 @@
 '''
 
 if __name__ == "__main__":
-    from urllib.request import Request, urlopen
-    from urllib.error import HTTPError
+    import requests
     import sys
 
-    req = Request(sys.argv[1])
+    req = requests.get(sys.argv[1])
     try:
-        with urlopen(req) as response:
-            print(response.read().decode("utf-8"))
-    except HTTPError as e:
-        if e.code >= 400:
+        print(req.text)
+    except raise_for_status() as e:
+        if e.status_code >= 400:
             print("Error code: {}".format(e.code))
