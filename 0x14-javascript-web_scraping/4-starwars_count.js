@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const request = require("request");
-const process = require("process");
+const request = require('request');
+const process = require('process');
 const url = process.argv[2];
 request(url, (error, response, body) => {
   if (error) {
@@ -8,14 +8,13 @@ request(url, (error, response, body) => {
   }
   const films = JSON.parse(body).results;
   let count = 0;
-  films.forEach((film) => {
-    const filmChar = film.characters;
-    filmChar.map((fr) => {
-      if (fr.includes("18")) {
+  for (const film in films) {
+    const filmChar = films[film].characters;
+    for (const fr in filmChar) {
+      if (filmChar[fr].includes('18')) {
         count++;
       }
-    });
-  });
+    }
+  }
   console.log(count);
 });
-
